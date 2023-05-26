@@ -5,10 +5,13 @@ import { MailOutlined } from "@ant-design/icons";
 import { PhoneOutlined } from "@ant-design/icons";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
+import SimpleButton from "./UI/SimpleButton";
 
 function PersonalDetails() {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const personalDetails = useSelector((state) => state.contact.personalDetails);
   const contactDetails = useSelector((state) => state.contact.contactDetails);
+
   let imageData = {
     path: "https://picsum.photos/300/200",
     title: "Profile picture",
@@ -17,9 +20,11 @@ function PersonalDetails() {
   let content = [];
 
   if (personalDetails && contactDetails) {
-    if (personalDetails.profile_picture) {
+    if (
+      personalDetails.profile_picture &&
+      personalDetails.profile_picture.image_url
+    ) {
       imageData.path = personalDetails.profile_picture.image_url;
-      imageData.title = "Profile picture";
     }
     content = [
       {

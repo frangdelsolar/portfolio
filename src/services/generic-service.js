@@ -7,8 +7,6 @@ import { contactActions } from "../store/contact-slice";
 
 const hostUrl = `${process.env.REACT_APP_API_URL}/`;
 
-console.log(hostUrl);
-
 export const mailSvc = genericActionHandler(
   "Mail",
   contactActions,

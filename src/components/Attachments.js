@@ -14,7 +14,11 @@ function Attachments() {
           <List.Item
             key={item.name}
             style={{ margin: 0, padding: 0 }}
-            actions={[<a href={item.file_url}>download</a>]}
+            actions={[
+              <a href={item.file_url} target="_blank">
+                Download
+              </a>,
+            ]}
           >
             <List.Item.Meta title={item.name} description={item.description} />
           </List.Item>

@@ -44,24 +44,16 @@ function App() {
           message={notification.message}
         />
       )}
-      <Space
-        direction="vertical"
-        size="middle"
+      <Row
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          backgroundColor: "#2f2f2f",
-          padding: "1rem",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          padding: 1,
+          margin: 0,
+          backgroundColor: "#2f2f2f",
         }}
       >
         <RouterProvider router={router} />
-      </Space>
+      </Row>
     </LocalizationProvider>
   );
 }

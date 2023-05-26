@@ -5,7 +5,9 @@ import { portfolioActions } from "../store/portfolio-slice";
 import { resumeActions } from "../store/resume-slice";
 import { contactActions } from "../store/contact-slice";
 
-const hostUrl = "http://127.0.0.1:8000/";
+const hostUrl = `${process.env.REACT_APP_API_URL}/`;
+
+console.log(hostUrl);
 
 export const mailSvc = genericActionHandler(
   "Mail",
